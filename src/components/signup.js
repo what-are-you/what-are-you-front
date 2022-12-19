@@ -45,25 +45,15 @@ export default function SignUp() {
                     </Typography>
                     <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
                         <Grid container spacing={2}>
-                            <Grid item xs={12} sm={6}>
-                                <TextField
-                                    autoComplete="given-name"
-                                    name="firstName"
-                                    required
-                                    fullWidth
-                                    id="firstName"
-                                    label="First Name"
-                                    autoFocus
-                                />
-                            </Grid>
-                            <Grid item xs={12} sm={6}>
+                            <Grid item xs={12}>
                                 <TextField
                                     required
                                     fullWidth
-                                    id="lastName"
-                                    label="Last Name"
-                                    name="lastName"
-                                    autoComplete="family-name"
+                                    name="fullName"
+                                    label="fullName"
+                                    type="fullName"
+                                    id="fullName"
+                                    autoComplete="full-Name"
                                 />
                             </Grid>
                             <Grid item xs={12}>
@@ -92,11 +82,11 @@ export default function SignUp() {
                                 <TextField
                                     required
                                     fullWidth
-                                    name="passwordConfirm"
-                                    label="Password Confirm"
-                                    type="password"
-                                    id="passwordConfirm"
-                                    autoComplete="new-password"
+                                    name="confirmpassword"
+                                    label="Confirm Password"
+                                    type="confirmPassword"
+                                    id="confirmPassword"
+                                    autoComplete="confirm-password"
                                 />
                             </Grid>
 
@@ -117,7 +107,7 @@ export default function SignUp() {
                         </Button>
                         <Grid container justifyContent="flex-end">
                             <Grid item>
-                                <Link href="#" variant="body2">
+                                <Link href="/" variant="body2">
                                     Already have an account? Sign in
                                 </Link>
                             </Grid>
