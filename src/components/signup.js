@@ -54,6 +54,7 @@ export default function SignUp() {
                                     type="fullName"
                                     id="fullName"
                                     autoComplete="full-Name"
+                                    autoFocus
                                 />
                             </Grid>
                             <Grid item xs={12}>
