@@ -13,6 +13,7 @@
     "@testing-library/user-event": "^13.5.0",
     "bcrypt": "^5.1.0",
     "eslint": "^8.30.0",
+    "gh-pages": "^4.0.0",
     "react": "^18.2.0",
     "react-cookie": "^4.1.1",
     "react-dom": "^18.2.0",
@@ -26,7 +27,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -50,5 +53,6 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
     "prettier": "^2.8.1"
-  }
+  },
+  "homepage": "https://what-are-you.github.io/what-are-you-front"
 }
