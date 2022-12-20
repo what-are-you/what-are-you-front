@@ -12,12 +12,15 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-
+import { useNavigate } from 'react-router-dom';
 
 
 const theme = createTheme();
 
 const SignIn = (props) => {
+
+    const navigate = useNavigate();
+
     const handleSubmit = (event) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
@@ -25,6 +28,11 @@ const SignIn = (props) => {
             email: data.get('email'),
             password: data.get('password'),
         });
+    };
+
+    const onLinkClick = (e) => {
+        e.preventDefault();
+        navigate("/signup");
     };
 
     return (
@@ -43,7 +51,7 @@ const SignIn = (props) => {
                         <LockOutlinedIcon />
                     </Avatar>
                     <Typography component="h1" variant="h5">
-                        Sign in
+                        로그인
                     </Typography>
                     <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
                         <TextField
@@ -51,7 +59,7 @@ const SignIn = (props) => {
                             required
                             fullWidth
                             id="email"
-                            label="id"
+                            label="이메일 주소"
                             name="email"
                             autoComplete="email"
                             autoFocus
@@ -62,14 +70,14 @@ const SignIn = (props) => {
                             required
                             fullWidth
                             name="password"
-                            label="Password"
+                            label="패스워드"
                             type="password"
                             id="password"
                             autoComplete="current-password"
                         />
                         <FormControlLabel
                             control={<Checkbox value="remember" color="primary" />}
-                            label="Remember me"
+                            label="로그인 유지하기"
                         />
                         <Button
                             type="submit"
@@ -77,18 +85,18 @@ const SignIn = (props) => {
                             variant="contained"
                             sx={{ mt: 3, mb: 2 }}
                         >
-                            Sign In
+                            로그인
                         </Button>
 
                         <Grid container>
                             <Grid item xs>
                                 <Link href="#" variant="body2">
-                                    Forgot password?
+                                    패스워드를 잊어버리셨나요?
                                 </Link>
                             </Grid>
                             <Grid item>
-                                <Link href={process.env.PUBLIC_URL + "signup"} variant="body2">
-                                    {"Don't have an account? Sign Up"}
+                                <Link to="/signup" variant="body2" onClick={onLinkClick}>
+                                    {"계정이 없으신가요? 회원가입"}
                                 </Link>
                             </Grid>
                         </Grid>

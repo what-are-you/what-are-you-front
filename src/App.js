@@ -10,8 +10,8 @@ function App() {
         <>
             <Router basename={process.env.PUBLIC_URL}>
                 <Routes>
-                    <Route exact path={process.env.PUBLIC_URL} element={<SignIn />} />
-                    <Route path={process.env.PUBLIC_URL + "signup"} element={<SignUp />} />
+                    <Route exact path="/" element={<SignIn />} />
+                    <Route exact path="/signup" element={<SignUp />} />
                 </Routes>
             </Router>
         </>
